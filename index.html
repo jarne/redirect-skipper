@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <link
+            href="node_modules/bootstrap/dist/css/bootstrap.min.css"
+            rel="stylesheet"
+        />
+        <link href="assets/css/index.css" rel="stylesheet" />
+        <title>RedirectSkipper | fetch real URL</title>
+    </head>
+    <body>
+        <div class="container">
+            <div class="redirect-view">
+                <h3>RedirectSkipper</h3>
+                <div class="mb-3">
+                    <label for="adUrlTextarea" class="form-label"
+                        >Enter URL:</label
+                    >
+                    <textarea
+                        class="form-control"
+                        id="adUrlTextarea"
+                        rows="3"
+                    ></textarea>
+                </div>
+                <p>⌨️ press enter to paste clipboard content</p>
+                <div id="targetArea" style="display: none">
+                    <p>Target URL:</p>
+                    <p>
+                        <a
+                            id="targetLink"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            >...</a
+                        >
+                    </p>
+                    <p>🖱 press enter to open the link</p>
+                </div>
+                <p>
+                    this web app is
+                    <a
+                        href="https://github.com/jarne/redirect-skipper"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        >open source</a
+                    >
+                </p>
+            </div>
+        </div>
+        <script type="text/javascript" src="assets/js/index.js"></script>
+    </body>
+</html>

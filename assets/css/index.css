@@ -1,0 +1,20 @@
+/**
+ * BPM Counter | app style
+ */
+
+html,
+body,
+.container {
+    height: 100%;
+}
+
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.redirect-view {
+    width: 100%;
+    max-width: 450px;
+}

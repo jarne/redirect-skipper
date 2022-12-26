@@ -1,0 +1,39 @@
+{
+    "name": "redirect-skipper",
+    "version": "1.0.0",
+    "description": "Web tool to fetch real URL out of ad redirects",
+    "keywords": [
+        "ad",
+        "redirect",
+        "fetch",
+        "url",
+        "skip"
+    ],
+    "homepage": "https://github.com/jarne/redirect-skipper",
+    "bugs": {
+        "url": "https://github.com/jarne/redirect-skipper/issues"
+    },
+    "license": "MIT",
+    "author": {
+        "name": "Jarne",
+        "url": "https://github.com/jarne"
+    },
+    "repository": {
+        "type": "git",
+        "url": "https://github.com/jarne/redirect-skipper.git"
+    },
+    "scripts": {
+        "start": "parcel index.html",
+        "build": "parcel build index.html",
+        "format": "prettier --write \"**/*.{js,css,html,json,yml,md}\""
+    },
+    "dependencies": {
+        "bootstrap": "^5.2",
+        "cssnano": "^5.1",
+        "parcel": "^2.8",
+        "postcss": "^8.4"
+    },
+    "devDependencies": {
+        "prettier": "^2.8"
+    }
+}
