@@ -7,8 +7,8 @@
     <a href="https://github.com/jarne/redirect-skipper/blob/master/package.json">
         <img src="https://img.shields.io/github/package-json/v/jarne/redirect-skipper.svg" alt="Package version">
     </a>
-    <a href="https://app.netlify.com/sites/timely-conkies-3c8b4c/deploys">
-        <img src="https://api.netlify.com/api/v1/badges/7905daad-b815-415f-a3ad-235514473db1/deploy-status" alt="Netlify Status">
+    <a href="https://app.netlify.com/sites/incomparable-bombolone-6394dd/deploys">
+        <img src="https://api.netlify.com/api/v1/badges/fe723044-cead-4514-9ac5-2dd43da41f6a/deploy-status" alt="Netlify Status">
     </a>
     <a href="https://github.com/jarne/redirect-skipper/blob/master/LICENSE">
         <img src="https://img.shields.io/github/license/jarne/redirect-skipper.svg" alt="License">
