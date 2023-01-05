@@ -8,6 +8,7 @@ const ENCODED_HTTPS = "https%3A";
 const adUrlTextarea = document.getElementById("adUrlTextarea");
 const targetArea = document.getElementById("targetArea");
 const targetLink = document.getElementById("targetLink");
+const notFoundMsg = document.getElementById("notFoundMsg");
 
 let targetUrl = "#";
 
@@ -39,19 +40,19 @@ function extractTargetUrl(adUrl) {
 
     try {
         fetchedUrl = tryExtractEncodedUrl(adUrl);
-        processResult(fetchedUrl);
+        return processResult(fetchedUrl);
     } catch (e) {
         // do nothing
     }
 
     try {
         fetchedUrl = tryExtractPlainUrl(adUrl);
-        processResult(fetchedUrl);
+        return processResult(fetchedUrl);
     } catch (e) {
         // do nothing
     }
 
-    // TODO: nothing found, maybe show a message
+    notFoundMsg.style.display = "inherit";
 }
 
 function processResult(fetchedUrl) {
