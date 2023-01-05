@@ -1,6 +1,6 @@
 {
     "name": "redirect-skipper",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "description": "Web tool to fetch real URL out of ad redirects",
     "keywords": [
         "ad",

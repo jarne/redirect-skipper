@@ -2,30 +2,61 @@
  * BPM Counter | counter script
  */
 
+const PLAIN_HTTPS = "https://";
+const ENCODED_HTTPS = "https%3A";
+
 const adUrlTextarea = document.getElementById("adUrlTextarea");
 const targetArea = document.getElementById("targetArea");
 const targetLink = document.getElementById("targetLink");
 
 let targetUrl = "#";
 
+function tryExtractEncodedUrl(adUrl) {
+    const encUrlParts = adUrl.split(ENCODED_HTTPS);
+    if (encUrlParts.length < 2) {
+        throw new Exception();
+    }
+    const firstPart = `${ENCODED_HTTPS}${encUrlParts[1]}`;
+
+    const urlEndParts = firstPart.split("&");
+    const secondPart = urlEndParts[0];
+
+    return decodeURIComponent(secondPart);
+}
+
+function tryExtractPlainUrl(adUrl) {
+    const plaUrlParts = adUrl.split(PLAIN_HTTPS);
+    if (plaUrlParts.length < 3) {
+        throw new Exception();
+    }
+    const containedPart = `${PLAIN_HTTPS}${plaUrlParts[2]}`;
+
+    return containedPart;
+}
+
 function extractTargetUrl(adUrl) {
-    if (!adUrl.includes("https%3A")) {
-        return;
+    let fetchedUrl;
+
+    try {
+        fetchedUrl = tryExtractEncodedUrl(adUrl);
+        processResult(fetchedUrl);
+    } catch (e) {
+        // do nothing
     }
 
-    const p1 = adUrl.split("https%3A");
-    if (p1.length !== 2) {
-        return;
+    try {
+        fetchedUrl = tryExtractPlainUrl(adUrl);
+        processResult(fetchedUrl);
+    } catch (e) {
+        // do nothing
     }
-    const firstPart = `https%3A${p1[1]}`;
 
-    const p2 = firstPart.split("&");
-    const secondPart = p2[0];
+    // TODO: nothing found, maybe show a message
+}
 
-    const decoded = decodeURIComponent(secondPart);
-    targetUrl = decoded;
-
-    renderResult(targetUrl);
+function processResult(fetchedUrl) {
+    targetUrl = fetchedUrl;
+    renderResult(fetchedUrl);
 }
 
 function renderResult(targetUrl) {
